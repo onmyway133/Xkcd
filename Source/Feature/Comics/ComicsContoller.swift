@@ -7,12 +7,29 @@
 //
 
 import UIKit
+import Anchors
 
 final class ComicsController: UIViewController {
+
+  private var collectionView: UICollectionView!
 
   // MARK: - Life cycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    setup()
+  }
+
+  // MARK: - Setup
+
+  private func setup() {
+    let layout = UICollectionViewLayout()
+    collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    view.addSubview(collectionView)
+
+    activate(
+      collectionView.anchor.edges
+    )
   }
 }
