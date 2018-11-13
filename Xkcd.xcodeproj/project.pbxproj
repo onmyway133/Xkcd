@@ -31,6 +31,7 @@
 		D21821E2219B7A3000B2EB89 /* ComicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821E1219B7A3000B2EB89 /* ComicService.swift */; };
 		D21821E5219B7AA600B2EB89 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821E4219B7AA600B2EB89 /* Resource.swift */; };
 		D21821E7219B7AAD00B2EB89 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821E6219B7AAD00B2EB89 /* Networking.swift */; };
+		D21821E9219B7C4900B2EB89 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821E8219B7C4900B2EB89 /* NetworkService.swift */; };
 		EDBE4C33DF9B4AEF55FFCECB /* Pods_XkcdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7AF981B61471A32FB620C7 /* Pods_XkcdTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		D21821E1219B7A3000B2EB89 /* ComicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicService.swift; sourceTree = "<group>"; };
 		D21821E4219B7AA600B2EB89 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		D21821E6219B7AAD00B2EB89 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		D21821E8219B7C4900B2EB89 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D2C9454429917C96F7130CAB /* Pods_Xkcd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xkcd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30EE5C70FF60D7BB2160C98 /* Pods-XkcdTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XkcdTests.debug.xcconfig"; path = "Target Support Files/Pods-XkcdTests/Pods-XkcdTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F54FFF8E7322330B7E6C7252 /* Pods-Xkcd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xkcd.release.xcconfig"; path = "Target Support Files/Pods-Xkcd/Pods-Xkcd.release.xcconfig"; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				D21821E1219B7A3000B2EB89 /* ComicService.swift */,
+				D21821E8219B7C4900B2EB89 /* NetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				D21821DD219B79CD00B2EB89 /* ComicCell.swift in Sources */,
 				D21821E7219B7AAD00B2EB89 /* Networking.swift in Sources */,
 				D21821E5219B7AA600B2EB89 /* Resource.swift in Sources */,
+				D21821E9219B7C4900B2EB89 /* NetworkService.swift in Sources */,
 				D21821BC219B6A8500B2EB89 /* AppFlowController.swift in Sources */,
 				D21821B2219B688F00B2EB89 /* ViewController.swift in Sources */,
 				D21821CE219B705400B2EB89 /* R.generated.swift in Sources */,
