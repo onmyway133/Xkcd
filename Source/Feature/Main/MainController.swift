@@ -8,13 +8,22 @@
 
 import UIKit
 
-final class MainController: UIViewController {
+final class MainController: UITabBarController {
 
   // MARK: - Life cycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.backgroundColor = .white
+    let comicsController = ComicsController()
+    comicsController.title = R.string.localizable.comicsTitle()
+
+    let favoriteController = FavoriteController()
+    favoriteController.title = R.string.localizable.favoriteTitle()
+
+    viewControllers = [
+      UINavigationController(rootViewController: comicsController),
+      UINavigationController(rootViewController: favoriteController)
+    ]
   }
 }

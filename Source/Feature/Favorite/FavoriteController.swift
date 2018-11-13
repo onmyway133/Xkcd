@@ -1,5 +1,5 @@
 //
-//  DetailController.swift
+//  FavoriteController.swift
 //  Xkcd
 //
 //  Created by khoa on 13/11/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DetailController: UIViewController {
+final class FavoriteController: UIViewController {
 
   // MARK: - Life cycle
 
