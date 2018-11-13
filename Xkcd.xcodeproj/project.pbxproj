@@ -26,6 +26,7 @@
 		D21821D4219B72E000B2EB89 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821D3219B72E000B2EB89 /* FavoriteController.swift */; };
 		D21821D6219B73BD00B2EB89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D21821D5219B73BD00B2EB89 /* Localizable.strings */; };
 		D21821D8219B75C600B2EB89 /* CollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821D7219B75C600B2EB89 /* CollectionView+Extensions.swift */; };
+		D21821DB219B75F700B2EB89 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821DA219B75F700B2EB89 /* Adapter.swift */; };
 		EDBE4C33DF9B4AEF55FFCECB /* Pods_XkcdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7AF981B61471A32FB620C7 /* Pods_XkcdTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		D21821D3219B72E000B2EB89 /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
 		D21821D5219B73BD00B2EB89 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D21821D7219B75C600B2EB89 /* CollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		D21821DA219B75F700B2EB89 /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
 		D2C9454429917C96F7130CAB /* Pods_Xkcd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xkcd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30EE5C70FF60D7BB2160C98 /* Pods-XkcdTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XkcdTests.debug.xcconfig"; path = "Target Support Files/Pods-XkcdTests/Pods-XkcdTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F54FFF8E7322330B7E6C7252 /* Pods-Xkcd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xkcd.release.xcconfig"; path = "Target Support Files/Pods-Xkcd/Pods-Xkcd.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		D21821B4219B690F00B2EB89 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D21821D9219B75ED00B2EB89 /* Adapter */,
 				D21821CC219B6FFB00B2EB89 /* Constants */,
 				D21821C3219B6ABF00B2EB89 /* Extensions */,
 			);
@@ -289,6 +292,14 @@
 				D21821D3219B72E000B2EB89 /* FavoriteController.swift */,
 			);
 			path = Favorite;
+			sourceTree = "<group>";
+		};
+		D21821D9219B75ED00B2EB89 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				D21821DA219B75F700B2EB89 /* Adapter.swift */,
+			);
+			path = Adapter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -562,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D21821BE219B6A9400B2EB89 /* MainController.swift in Sources */,
+				D21821DB219B75F700B2EB89 /* Adapter.swift in Sources */,
 				D21821BC219B6A8500B2EB89 /* AppFlowController.swift in Sources */,
 				D21821B2219B688F00B2EB89 /* ViewController.swift in Sources */,
 				D21821CE219B705400B2EB89 /* R.generated.swift in Sources */,
