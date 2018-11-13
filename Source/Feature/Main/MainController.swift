@@ -17,9 +17,11 @@ final class MainController: UITabBarController {
 
     let comicsController = ComicsController()
     comicsController.title = R.string.localizable.comicsTitle()
+    comicsController.tabBarItem.image = R.image.comics()
 
     let favoriteController = FavoriteController()
     favoriteController.title = R.string.localizable.favoriteTitle()
+    favoriteController.tabBarItem.image = R.image.favorites()
 
     viewControllers = [
       UINavigationController(rootViewController: comicsController),
