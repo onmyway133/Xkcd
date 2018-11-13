@@ -36,4 +36,8 @@ struct Comic: Codable {
   let alternativeText: String
   let image: URL
   let title: String
+
+  var id: Int {
+    return num
+  }
 }
