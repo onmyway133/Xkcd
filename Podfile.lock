@@ -1,0 +1,32 @@
+PODS:
+  - Anchors (2.4.0)
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
+  - SwiftHash (2.0.2)
+  - SwiftLint (0.27.0)
+
+DEPENDENCIES:
+  - Anchors (~> 2.4.0)
+  - R.swift (~> 4.0)
+  - SwiftHash (~> 2.0.2)
+  - SwiftLint (~> 0.27)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Anchors
+    - R.swift
+    - R.swift.Library
+    - SwiftHash
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Anchors: 75614cac462e063b395386e31eb593a856d831a8
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  SwiftHash: 6d312abe61c8359bdef8d0093642f3a70b1c17ba
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+
+PODFILE CHECKSUM: 892e2f0b942d8854d130b4cfd683f08cee6f93e5
+
+COCOAPODS: 1.6.0.beta.1
