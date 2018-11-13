@@ -26,6 +26,7 @@ final class ComicsController: UIViewController {
   private func setup() {
     let layout = UICollectionViewLayout()
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    collectionView.register(cellType: ComicCell.self)
     view.addSubview(collectionView)
 
     activate(
