@@ -5,7 +5,7 @@ target 'Xkcd' do
 
   pod 'SwiftLint', '~> 0.27'
   pod 'SwiftHash', '~> 2.0.2'
-  pod 'R.swift', '~> 4.0'
+  pod 'R.swift', '5.0.0.alpha.1'
   pod 'Anchors', '~> 2.4.0'
 
   target 'XkcdTests' do

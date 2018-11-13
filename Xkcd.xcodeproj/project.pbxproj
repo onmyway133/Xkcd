@@ -20,6 +20,7 @@
 		D21821C0219B6AA500B2EB89 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821BF219B6AA500B2EB89 /* DetailController.swift */; };
 		D21821C2219B6AAC00B2EB89 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821C1219B6AAC00B2EB89 /* ListController.swift */; };
 		D21821C5219B6ACD00B2EB89 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821C4219B6ACD00B2EB89 /* ViewController+Extensions.swift */; };
+		D21821CA219B6F0000B2EB89 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D21821C9219B6F0000B2EB89 /* Podfile */; };
 		EDBE4C33DF9B4AEF55FFCECB /* Pods_XkcdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7AF981B61471A32FB620C7 /* Pods_XkcdTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		D21821BF219B6AA500B2EB89 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		D21821C1219B6AAC00B2EB89 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		D21821C4219B6ACD00B2EB89 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
+		D21821C9219B6F0000B2EB89 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		D2C9454429917C96F7130CAB /* Pods_Xkcd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xkcd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30EE5C70FF60D7BB2160C98 /* Pods-XkcdTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XkcdTests.debug.xcconfig"; path = "Target Support Files/Pods-XkcdTests/Pods-XkcdTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F54FFF8E7322330B7E6C7252 /* Pods-Xkcd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xkcd.release.xcconfig"; path = "Target Support Files/Pods-Xkcd/Pods-Xkcd.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		D2182168219B67E700B2EB89 = {
 			isa = PBXGroup;
 			children = (
+				D21821C9219B6F0000B2EB89 /* Podfile */,
 				D21821A3219B684600B2EB89 /* Resource */,
 				D21821A2219B684000B2EB89 /* Source */,
 				D2182188219B67E900B2EB89 /* XkcdTests */,
@@ -359,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21821CA219B6F0000B2EB89 /* Podfile in Resources */,
 				D21821AB219B687E00B2EB89 /* LaunchScreen.storyboard in Resources */,
 				D21821AD219B687E00B2EB89 /* Assets.xcassets in Resources */,
 			);
@@ -489,7 +493,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script orif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n drag a script file from your workspace to insert its path.\n";
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
