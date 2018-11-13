@@ -207,6 +207,7 @@
 		D21821B4219B690F00B2EB89 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D21821CC219B6FFB00B2EB89 /* Constants */,
 				D21821C3219B6ABF00B2EB89 /* Extensions */,
 			);
 			path = Library;
@@ -252,6 +253,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D21821CC219B6FFB00B2EB89 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,6 +268,7 @@
 			buildConfigurationList = D2182199219B67E900B2EB89 /* Build configuration list for PBXNativeTarget "Xkcd" */;
 			buildPhases = (
 				5F9B1089F6AD2494EDFA81F4 /* [CP] Check Pods Manifest.lock */,
+				D21821CB219B6FE600B2EB89 /* R.swift */,
 				D218216D219B67E700B2EB89 /* Sources */,
 				D218216E219B67E700B2EB89 /* Frameworks */,
 				D218216F219B67E700B2EB89 /* Resources */,
@@ -494,6 +503,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		D21821CB219B6FE600B2EB89 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Source/Library/Constants\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
