@@ -5,6 +5,36 @@
 	<key>logFormatVersion</key>
 	<integer>9</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>7CEC6D81-A386-44BA-B6D8-3FEEFE1D930F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>7CEC6D81-A386-44BA-B6D8-3FEEFE1D930F.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Xkcd project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Xkcd</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>0</integer>
+			<key>signature</key>
+			<string>Build Xkcd</string>
+			<key>timeStartedRecording</key>
+			<real>563832981.70545805</real>
+			<key>timeStoppedRecording</key>
+			<real>563832985.24398899</real>
+			<key>title</key>
+			<string>Build Xkcd</string>
+			<key>uniqueIdentifier</key>
+			<string>7CEC6D81-A386-44BA-B6D8-3FEEFE1D930F</string>
+		</dict>
+	</dict>
 </dict>
 </plist>
