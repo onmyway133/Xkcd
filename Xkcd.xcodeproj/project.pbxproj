@@ -107,7 +107,6 @@
 				02F46732C4F2E5A9C0C4FC49 /* Pods-XkcdUITests.debug.xcconfig */,
 				B1E5E4A27B21808D7A099C49 /* Pods-XkcdUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -261,6 +260,7 @@
 				D218216D219B67E700B2EB89 /* Sources */,
 				D218216E219B67E700B2EB89 /* Frameworks */,
 				D218216F219B67E700B2EB89 /* Resources */,
+				D21821C8219B6DF300B2EB89 /* SwiftLint */,
 				24E9A6F8BCED638CBCC851D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -473,6 +473,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D21821C8219B6DF300B2EB89 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script orif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n drag a script file from your workspace to insert its path.\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -591,6 +609,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -645,6 +664,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -665,7 +685,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.onmyway133.Xkcd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -685,7 +704,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.onmyway133.Xkcd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -705,7 +723,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.onmyway133.XkcdTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xkcd.app/Xkcd";
 			};
@@ -726,7 +743,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.onmyway133.XkcdTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xkcd.app/Xkcd";
 			};
@@ -746,7 +762,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.onmyway133.XkcdUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Xkcd;
 			};
@@ -766,7 +781,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.onmyway133.XkcdUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Xkcd;
 			};
