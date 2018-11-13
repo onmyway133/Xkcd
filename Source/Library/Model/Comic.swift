@@ -21,14 +21,14 @@ struct Comic: Codable {
     case link
     case news
     case transcript
-    case image
+    case image = "img"
     case title
   }
 
   let num: Int
-  let day: Int
-  let month: Int
-  let year: Int
+  let day: String
+  let month: String
+  let year: String
   let link: String
   let news: String
   let safeTitle: String

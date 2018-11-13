@@ -16,7 +16,8 @@ class ComicServiceTests: XCTestCase {
     let comicService = ComicService(networking: mockNetworkService)
     comicService.fetchCurrent(completion: { comic in
       XCTAssertNotNil(comic)
-      XCTAssertEqual(comic!.title, "title")
+      XCTAssertEqual(comic!.title, "Indirect Detection")
+      XCTAssertEqual(comic!.image, URL(string: "https://imgs.xkcd.com/comics/indirect_detection.png")!)
       XCTAssertEqual(comic!.id, 2071)
       expectation.fulfill()
     })
