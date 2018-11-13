@@ -43,6 +43,31 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    struct localizable {
+      /// Value: Comics
+      static let comicsTitle = Rswift.StringResource(key: "comics.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Favorites
+      static let favoriteTitle = Rswift.StringResource(key: "favorite.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      
+      /// Value: Comics
+      static func comicsTitle(_: Void = ()) -> String {
+        return NSLocalizedString("comics.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Favorites
+      static func favoriteTitle(_: Void = ()) -> String {
+        return NSLocalizedString("favorite.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      fileprivate init() {}
+    }
+    
+    fileprivate init() {}
+  }
+  
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
