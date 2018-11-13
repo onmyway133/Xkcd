@@ -35,8 +35,9 @@
 		D21821EC219B7CD500B2EB89 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821EB219B7CD500B2EB89 /* Comic.swift */; };
 		D21821EE219B7EAC00B2EB89 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821ED219B7EAC00B2EB89 /* Data+Extensions.swift */; };
 		D21821F3219B826200B2EB89 /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821F1219B81BC00B2EB89 /* NetworkServiceMock.swift */; };
-		D21821F5219B830200B2EB89 /* currentComic.json in Resources */ = {isa = PBXBuildFile; fileRef = D21821F4219B830200B2EB89 /* currentComic.json */; };
-		D21821F7219B831800B2EB89 /* comic614.json in Resources */ = {isa = PBXBuildFile; fileRef = D21821F6219B831800B2EB89 /* comic614.json */; };
+		D21821FB219B83B800B2EB89 /* ComicServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21821F9219B83B300B2EB89 /* ComicServiceTests.swift */; };
+		D21821FC219B846200B2EB89 /* comic614.json in Resources */ = {isa = PBXBuildFile; fileRef = D21821F6219B831800B2EB89 /* comic614.json */; };
+		D21821FD219B846400B2EB89 /* currentComic.json in Resources */ = {isa = PBXBuildFile; fileRef = D21821F4219B830200B2EB89 /* currentComic.json */; };
 		EDBE4C33DF9B4AEF55FFCECB /* Pods_XkcdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7AF981B61471A32FB620C7 /* Pods_XkcdTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		D21821F1219B81BC00B2EB89 /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
 		D21821F4219B830200B2EB89 /* currentComic.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = currentComic.json; sourceTree = "<group>"; };
 		D21821F6219B831800B2EB89 /* comic614.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = comic614.json; sourceTree = "<group>"; };
+		D21821F9219B83B300B2EB89 /* ComicServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicServiceTests.swift; sourceTree = "<group>"; };
 		D2C9454429917C96F7130CAB /* Pods_Xkcd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xkcd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30EE5C70FF60D7BB2160C98 /* Pods-XkcdTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XkcdTests.debug.xcconfig"; path = "Target Support Files/Pods-XkcdTests/Pods-XkcdTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F54FFF8E7322330B7E6C7252 /* Pods-Xkcd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xkcd.release.xcconfig"; path = "Target Support Files/Pods-Xkcd/Pods-Xkcd.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		D2182193219B67E900B2EB89 /* XkcdUITests */ = {
 			isa = PBXGroup;
 			children = (
+				D21821F8219B839F00B2EB89 /* Services */,
 				D21821F0219B815700B2EB89 /* Mock */,
 				D21821EF219B813000B2EB89 /* Fixture */,
 				D2182194219B67E900B2EB89 /* XkcdUITests.swift */,
@@ -372,6 +375,14 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		D21821F8219B839F00B2EB89 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D21821F9219B83B300B2EB89 /* ComicServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -494,6 +505,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21821FC219B846200B2EB89 /* comic614.json in Resources */,
+				D21821FD219B846400B2EB89 /* currentComic.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,8 +514,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21821F5219B830200B2EB89 /* currentComic.json in Resources */,
-				D21821F7219B831800B2EB89 /* comic614.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +683,7 @@
 			files = (
 				D21821F3219B826200B2EB89 /* NetworkServiceMock.swift in Sources */,
 				D218218A219B67E900B2EB89 /* XkcdTests.swift in Sources */,
+				D21821FB219B83B800B2EB89 /* ComicServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
