@@ -67,10 +67,12 @@ final class ComicCell: UICollectionViewCell {
   func configure(id: Int) {
     idLabel.text = "\(id)"
     titleLabel.text = "Loading..."
+    backgroundImageView.image = nil
   }
 
   func configure(comic: Comic) {
     idLabel.text = "\(comic.id)"
     titleLabel.text = comic.title
+    backgroundImageView.setImage(url: comic.image)
   }
 }

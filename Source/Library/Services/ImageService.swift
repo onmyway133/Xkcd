@@ -6,7 +6,7 @@
 //  Copyright © 2018 onmyway133. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Check local cache and fetch remote image
 final class ImageService {
