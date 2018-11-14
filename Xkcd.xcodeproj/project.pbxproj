@@ -44,6 +44,7 @@
 		D236FC82219CCC94007436F3 /* Object+Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236FC81219CCC94007436F3 /* Object+Then.swift */; };
 		D236FC84219CD1D2007436F3 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236FC83219CD1D2007436F3 /* View+Extensions.swift */; };
 		D236FC86219CD90B007436F3 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236FC85219CD90B007436F3 /* CacheService.swift */; };
+		D236FC88219CD99A007436F3 /* CacheServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236FC87219CD99A007436F3 /* CacheServiceTests.swift */; };
 		EDBE4C33DF9B4AEF55FFCECB /* Pods_XkcdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7AF981B61471A32FB620C7 /* Pods_XkcdTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		D236FC81219CCC94007436F3 /* Object+Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object+Then.swift"; sourceTree = "<group>"; };
 		D236FC83219CD1D2007436F3 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D236FC85219CD90B007436F3 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		D236FC87219CD99A007436F3 /* CacheServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheServiceTests.swift; sourceTree = "<group>"; };
 		D2C9454429917C96F7130CAB /* Pods_Xkcd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xkcd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30EE5C70FF60D7BB2160C98 /* Pods-XkcdTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XkcdTests.debug.xcconfig"; path = "Target Support Files/Pods-XkcdTests/Pods-XkcdTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F54FFF8E7322330B7E6C7252 /* Pods-Xkcd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xkcd.release.xcconfig"; path = "Target Support Files/Pods-Xkcd/Pods-Xkcd.release.xcconfig"; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				D21821F9219B83B300B2EB89 /* ComicServiceTests.swift */,
+				D236FC87219CD99A007436F3 /* CacheServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D236FC88219CD99A007436F3 /* CacheServiceTests.swift in Sources */,
 				D2182195219B67E900B2EB89 /* XkcdUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
