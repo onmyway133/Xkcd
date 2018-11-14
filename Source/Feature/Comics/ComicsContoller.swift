@@ -31,6 +31,8 @@ final class ComicsController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    view.backgroundColor = .white
+
     setupCollectionView()
     setupAdapter()
     loadData()
@@ -39,12 +41,13 @@ final class ComicsController: UIViewController {
   // MARK: - Setup
 
   private func setupCollectionView() {
-    let layout = UICollectionViewLayout()
+    let layout = UICollectionViewFlowLayout()
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.register(cellType: ComicCell.self)
     collectionView.dataSource = adapter
     collectionView.delegate = adapter
 
+    collectionView.backgroundColor = .white
     view.addSubview(collectionView)
 
     activate(
@@ -53,6 +56,8 @@ final class ComicsController: UIViewController {
   }
 
   private func setupAdapter() {
+    adapter.cellHeight = 300
+
     adapter.configure = { model, cell in
       switch model {
       case .left(let id):
