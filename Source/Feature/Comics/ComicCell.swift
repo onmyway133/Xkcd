@@ -9,5 +9,16 @@
 import UIKit
 
 final class ComicCell: UICollectionViewCell {
+  private lazy var backgroundImageView = UIImageView().then {
+    $0.contentMode = .scaleAspectFill
+    $0.clipsToBounds = true
+  }
 
+  private lazy var overlayView: UIView = UIView().then {
+    $0.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+  }
+
+  // MARK: - Init
+
+  // MARK: - Config
 }
