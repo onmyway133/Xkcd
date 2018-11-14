@@ -53,12 +53,38 @@ final class ComicsController: UIViewController {
   }
 
   private func setupAdapter() {
-
+    adapter.configure = { model, cell in
+      switch model {
+      case .left(let id):
+        print("")
+      case .right(let comic):
+        print("")
+      }
+    }
   }
 
   // MARK: - Data
 
   private func loadData() {
+    comicService.fetchCurrent(completion: { [weak self] comic in
+      guard let comic = comic else {
+        return
+      }
 
+      DispatchQueue.main.async {
+        self?.populate(currentComic: comic)
+      }
+    })
+  }
+
+  /// Populate data source starting from current comic backward
+  private func populate(currentComic: Comic) {
+    var items: [Either<Int, Comic>] = Array(1..<currentComic.id).map({
+      return Either.left($0)
+    })
+
+    items.append(Either.right(currentComic))
+    adapter.items = items
+    collectionView.reloadData()
   }
 }
