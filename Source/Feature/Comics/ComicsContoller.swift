@@ -56,9 +56,9 @@ final class ComicsController: UIViewController {
     adapter.configure = { model, cell in
       switch model {
       case .left(let id):
-        print("")
+        cell.configure(id: id)
       case .right(let comic):
-        print("")
+        cell.configure(comic: comic)
       }
     }
   }
