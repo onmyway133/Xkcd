@@ -21,17 +21,24 @@ final class ComicCell: UICollectionViewCell {
   }
 
   private lazy var idLabel = UILabel().then {
-    $0.font = UIFont.preferredFont(forTextStyle: .headline)
+    $0.font = R.font.xkcdRegular(size: 20)
+    $0.textColor = .white
   }
 
   private lazy var titleLabel = UILabel().then {
-    $0.font = UIFont.preferredFont(forTextStyle: .headline)
+    $0.font = R.font.xkcdRegular(size: 30)
+    $0.textColor = .white
   }
 
   // MARK: - Init
 
   override init(frame: CGRect) {
     super.init(frame: frame)
+
+    UIFont.familyNames.forEach({ familyName in
+      let fontNames = UIFont.fontNames(forFamilyName: familyName)
+      print(familyName, fontNames)
+    })
 
     addSubviews([backgroundImageView, overlayView])
     overlayView.addSubviews([idLabel, titleLabel])
@@ -66,24 +73,24 @@ final class ComicCell: UICollectionViewCell {
     activate(
       backgroundImageView.anchor.edges,
       overlayView.anchor.bottom.left.right,
-      overlayView.anchor.height.equal.to(anchor.height).multiplier(0.3),
-      idLabel.anchor.left.constant(8),
+      overlayView.anchor.height.equal.to(anchor.height).multiplier(0.2),
+      idLabel.anchor.left.constant(12),
       idLabel.anchor.top.constant(8),
       titleLabel.anchor.top.equal.to(idLabel.anchor.bottom).constant(8),
-      titleLabel.anchor.left.constant(8)
+      titleLabel.anchor.paddingHorizontally(12)
     )
   }
 
   // MARK: - Config
 
   func configure(id: Int) {
-    idLabel.text = "\(id)"
-    titleLabel.text = "Loading..."
+    idLabel.text = "#\(id)"
+    titleLabel.text = R.string.localizable.loading()
     backgroundImageView.image = R.image.placeholder()
   }
 
   func configure(comic: Comic) {
-    idLabel.text = "\(comic.id)"
+    idLabel.text = "#\(comic.id)"
     titleLabel.text = comic.title
     backgroundImageView.setImage(url: comic.image, placeholder: R.image.placeholder())
   }

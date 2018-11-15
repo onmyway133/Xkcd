@@ -13,18 +13,44 @@ struct R: Rswift.Validatable {
   fileprivate static let hostingBundle = Bundle(for: R.Class.self)
   
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 1 files.
+  /// This `R.file` struct is generated, and contains static references to 2 files.
   struct file {
     /// Resource file `Podfile`.
     static let podfile = Rswift.FileResource(bundle: R.hostingBundle, name: "Podfile", pathExtension: "")
+    /// Resource file `xkcdRegular.otf`.
+    static let xkcdRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "xkcdRegular", pathExtension: "otf")
     
     /// `bundle.url(forResource: "Podfile", withExtension: "")`
     static func podfile(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.podfile
       return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "xkcdRegular", withExtension: "otf")`
+    static func xkcdRegularOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.xkcdRegularOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.font` struct is generated, and contains static references to 1 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `xkcd-Regular`.
+    static let xkcdRegular = Rswift.FontResource(fontName: "xkcd-Regular")
+    
+    /// `UIFont(name: "xkcd-Regular", size: ...)`
+    static func xkcdRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: xkcdRegular, size: size)
+    }
+    
+    static func validate() throws {
+      if R.font.xkcdRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'xkcd-Regular' could not be loaded, is 'xkcdRegular.otf' added to the UIAppFonts array in this targets Info.plist?") }
     }
     
     fileprivate init() {}
@@ -79,12 +105,14 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 3 localization keys.
     struct localizable {
       /// Value: Comics
       static let comicsTitle = Rswift.StringResource(key: "comics.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Favorites
       static let favoriteTitle = Rswift.StringResource(key: "favorite.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Loading...
+      static let loading = Rswift.StringResource(key: "loading", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       
       /// Value: Comics
       static func comicsTitle(_: Void = ()) -> String {
@@ -94,6 +122,11 @@ struct R: Rswift.Validatable {
       /// Value: Favorites
       static func favoriteTitle(_: Void = ()) -> String {
         return NSLocalizedString("favorite.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Loading...
+      static func loading(_: Void = ()) -> String {
+        return NSLocalizedString("loading", bundle: R.hostingBundle, comment: "")
       }
       
       fileprivate init() {}

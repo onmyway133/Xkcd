@@ -48,6 +48,7 @@
 		D236FC8E219CDB9D007436F3 /* ImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236FC8B219CDACD007436F3 /* ImageView+Extensions.swift */; };
 		D236FC8F219CDBB2007436F3 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236FC89219CD9CA007436F3 /* ImageService.swift */; };
 		D2E441A9219E04E4006FB3BF /* CoverflowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E441A8219E04E4006FB3BF /* CoverflowLayout.swift */; };
+		D2E441AD219E177C006FB3BF /* xkcdRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2E441AC219E177C006FB3BF /* xkcdRegular.otf */; };
 		EDBE4C33DF9B4AEF55FFCECB /* Pods_XkcdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7AF981B61471A32FB620C7 /* Pods_XkcdTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		D236FC8B219CDACD007436F3 /* ImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extensions.swift"; sourceTree = "<group>"; };
 		D2C9454429917C96F7130CAB /* Pods_Xkcd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xkcd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E441A8219E04E4006FB3BF /* CoverflowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverflowLayout.swift; sourceTree = "<group>"; };
+		D2E441AC219E177C006FB3BF /* xkcdRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = xkcdRegular.otf; path = ../../../../Downloads/xkcdRegular.otf; sourceTree = "<group>"; };
 		F30EE5C70FF60D7BB2160C98 /* Pods-XkcdTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XkcdTests.debug.xcconfig"; path = "Target Support Files/Pods-XkcdTests/Pods-XkcdTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F54FFF8E7322330B7E6C7252 /* Pods-Xkcd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xkcd.release.xcconfig"; path = "Target Support Files/Pods-Xkcd/Pods-Xkcd.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,6 +238,7 @@
 		D21821A3219B684600B2EB89 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D2E441AB219E176E006FB3BF /* Fonts */,
 				D21821A9219B687E00B2EB89 /* Assets.xcassets */,
 				D21821A4219B687E00B2EB89 /* Base.lproj */,
 				D21821AA219B687E00B2EB89 /* Info.plist */,
@@ -437,6 +440,14 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
+		D2E441AB219E176E006FB3BF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D2E441AC219E177C006FB3BF /* xkcdRegular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -548,6 +559,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2E441AD219E177C006FB3BF /* xkcdRegular.otf in Resources */,
 				D21821CA219B6F0000B2EB89 /* Podfile in Resources */,
 				D21821D6219B73BD00B2EB89 /* Localizable.strings in Resources */,
 				D21821AB219B687E00B2EB89 /* LaunchScreen.storyboard in Resources */,
