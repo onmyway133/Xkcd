@@ -9,7 +9,7 @@
 import Foundation
 
 // A xkcd comic
-struct Comic: Codable {
+struct Comic: Codable, Hashable {
 
   enum CodingKeys: String, CodingKey {
     case safeTitle = "safe_title"

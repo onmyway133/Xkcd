@@ -8,6 +8,7 @@ target 'Xkcd' do
   pod 'R.swift', '5.0.0.alpha.1'
   pod 'Anchors', '~> 2.4.0'
   pod 'On', :git => 'https://github.com/onmyway133/On'
+  pod 'DeepDiff', '~> 1.3.0'
 
   target 'XkcdTests' do
     inherit! :search_paths

@@ -8,6 +8,7 @@
 
 import UIKit
 import Anchors
+import DeepDiff
 
 final class FavoriteController: UIViewController {
 
@@ -84,7 +85,10 @@ final class FavoriteController: UIViewController {
   // MARK: - Data
 
   private func loadData() {
-    adapter.items = favoriteManager.comics
-    collectionView.reloadData()
+    let hasChanged = !diff(old: adapter.items, new: favoriteManager.comics).isEmpty
+    if hasChanged {
+      adapter.items = favoriteManager.comics
+      collectionView.reloadData()
+    }
   }
 }
