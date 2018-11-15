@@ -25,15 +25,23 @@ final class FavoriteManager {
   // MARK: - Star
 
   func star(comic: Comic) {
+    guard !isStarred(comic: comic) else {
+      return
+    }
 
+    comics.append(comic)
   }
 
   func unstar(comic: Comic) {
+    guard let index = comics.firstIndex(where: { $0.id == comic.id }) else {
+      return
+    }
 
+    comics.remove(at: index)
   }
 
   /// Check if a comic is starred
   func isStarred(comic: Comic) -> Bool {
-    return false
+    return comics.contains(where: { $0.id == comic.id })
   }
 }
