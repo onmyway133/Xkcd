@@ -20,4 +20,9 @@ extension UICollectionView {
   func register(cellType: UICollectionViewCell.Type) {
     register(cellType, forCellWithReuseIdentifier: String(describing: cellType.self))
   }
+
+  func scrollToLast(count: Int) {
+    let indexPath = IndexPath(item: count-1, section: 0)
+    scrollToItem(at: indexPath, at: .right, animated: true)
+  }
 }

@@ -90,6 +90,10 @@ final class ComicsController: UIViewController {
 
     items.append(Either.right(currentComic))
     adapter.items = items
+
     collectionView.reloadData()
+    DispatchQueue.main.async {
+      self.collectionView.scrollToLast(count: items.count)
+    }
   }
 }
