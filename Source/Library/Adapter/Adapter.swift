@@ -15,6 +15,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   var configure: ((T, Cell) -> Void)?
   var select: ((T) -> Void)?
   var display: ((T, IndexPath) -> Void)?
+  var size: ((CGSize) -> CGSize)?
 
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
@@ -41,10 +42,15 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     _ collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(
-      width: collectionView.frame.size.width,
-      height: collectionView.frame.size.height * 0.8
-    )
+
+    if let size = self.size {
+      return size(collectionView.frame.size)
+    } else {
+      return CGSize(
+        width: collectionView.frame.size.width,
+        height: collectionView.frame.size.height * 0.8
+      )
+    }
   }
 
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
