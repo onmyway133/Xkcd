@@ -56,7 +56,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
     /// Image `background`.
     static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "background")
@@ -64,6 +64,8 @@ struct R: Rswift.Validatable {
     static let comics = Rswift.ImageResource(bundle: R.hostingBundle, name: "comics")
     /// Image `favorites`.
     static let favorites = Rswift.ImageResource(bundle: R.hostingBundle, name: "favorites")
+    /// Image `hint`.
+    static let hint = Rswift.ImageResource(bundle: R.hostingBundle, name: "hint")
     /// Image `placeholder`.
     static let placeholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "placeholder")
     
@@ -80,6 +82,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "favorites", bundle: ..., traitCollection: ...)`
     static func favorites(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.favorites, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "hint", bundle: ..., traitCollection: ...)`
+    static func hint(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.hint, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "placeholder", bundle: ..., traitCollection: ...)`
@@ -105,10 +112,12 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 3 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 4 localization keys.
     struct localizable {
       /// Value: Comics
       static let comicsTitle = Rswift.StringResource(key: "comics.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Explain
+      static let explain = Rswift.StringResource(key: "explain", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Favorites
       static let favoriteTitle = Rswift.StringResource(key: "favorite.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Loading...
@@ -117,6 +126,11 @@ struct R: Rswift.Validatable {
       /// Value: Comics
       static func comicsTitle(_: Void = ()) -> String {
         return NSLocalizedString("comics.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Explain
+      static func explain(_: Void = ()) -> String {
+        return NSLocalizedString("explain", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Favorites
