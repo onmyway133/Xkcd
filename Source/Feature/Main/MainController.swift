@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 final class MainController: UITabBarController {
 
@@ -49,10 +50,37 @@ final class MainController: UITabBarController {
     handleFlow()
   }
 
-  func handleFlow() {
+  private func handleFlow() {
     comicsController.selectComic = { [weak self] comic in
-      let detailController = DetailController(comic: comic)
-      self?.comicNavigationController.pushViewController(detailController, animated: true)
+      guard let self = self else {
+        return
+      }
+
+      let detailController = self.makeDetail(comic: comic)
+      self.comicNavigationController.pushViewController(detailController, animated: true)
     }
+  }
+
+  private func makeDetail(comic: Comic) -> DetailController {
+    let detailController = DetailController(comic: comic)
+    detailController.explainComic = { [weak self] comic in
+      guard let self = self else {
+        return
+      }
+
+      let webController = self.makeExplain(comic: comic)
+      detailController.navigationController?.pushViewController(webController, animated: true)
+    }
+
+    return detailController
+  }
+
+  private func makeExplain(comic: Comic) -> SFSafariViewController {
+    guard let url = URL(string: "https://www.explainxkcd.com/wiki/index.php/\(comic.id)") else {
+      fatalError()
+    }
+
+    let controller = SFSafariViewController(url: url)
+    return controller
   }
 }
