@@ -17,7 +17,7 @@ final class ComicCell: UICollectionViewCell {
   }
 
   private lazy var overlayView = UIView().then {
-    $0.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+    $0.backgroundColor = UIColor.black.withAlphaComponent(0.7)
   }
 
   private lazy var idLabel = UILabel().then {
