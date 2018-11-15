@@ -56,7 +56,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 5 images.
+  /// This `R.image` struct is generated, and contains static references to 7 images.
   struct image {
     /// Image `background`.
     static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "background")
@@ -68,6 +68,10 @@ struct R: Rswift.Validatable {
     static let hint = Rswift.ImageResource(bundle: R.hostingBundle, name: "hint")
     /// Image `placeholder`.
     static let placeholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "placeholder")
+    /// Image `starred`.
+    static let starred = Rswift.ImageResource(bundle: R.hostingBundle, name: "starred")
+    /// Image `unstar`.
+    static let unstar = Rswift.ImageResource(bundle: R.hostingBundle, name: "unstar")
     
     /// `UIImage(named: "background", bundle: ..., traitCollection: ...)`
     static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -92,6 +96,16 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "placeholder", bundle: ..., traitCollection: ...)`
     static func placeholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.placeholder, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "starred", bundle: ..., traitCollection: ...)`
+    static func starred(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.starred, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "unstar", bundle: ..., traitCollection: ...)`
+    static func unstar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.unstar, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}

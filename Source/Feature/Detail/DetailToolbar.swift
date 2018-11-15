@@ -24,7 +24,7 @@ final class DetailToolbar: UIView {
   private(set) lazy var favoriteButton = UIButton().then {
     let button = UIButton()
     $0.showsTouchWhenHighlighted = true
-    $0.setImage(R.image.hint(), for: .normal)
+    $0.setImage(R.image.starred(), for: .normal)
   }
 
   // MARK: - Init
