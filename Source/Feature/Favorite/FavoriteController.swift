@@ -48,6 +48,7 @@ final class FavoriteController: UIViewController {
 
   private func setupCollectionView() {
     let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .vertical
 
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.register(cellType: ComicCell.self)
@@ -70,11 +71,19 @@ final class FavoriteController: UIViewController {
     adapter.select = { [weak self] comic in
       self?.selectComic?(comic)
     }
+
+    adapter.size = { containerSize in
+      return CGSize(
+        width: containerSize.width * 0.8,
+        height: containerSize.height * 0.5
+      )
+    }
   }
 
   // MARK: - Data
 
   private func loadData() {
     adapter.items = favoriteManager.comics
+    collectionView.reloadData()
   }
 }
