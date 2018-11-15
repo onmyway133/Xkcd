@@ -12,7 +12,7 @@ import Anchors
 /// Show as bottom tool bar in detail screen
 final class DetailToolbar: UIView {
   private lazy var overlayView = UIView().then {
-    $0.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+    $0.backgroundColor = UIColor.black.withAlphaComponent(0.5)
   }
 
   private(set) lazy var explainButton = UIButton().then {

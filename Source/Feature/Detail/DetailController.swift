@@ -16,6 +16,8 @@ final class DetailController: UIViewController {
     $0.contentMode = .scaleAspectFill
   }
 
+  private lazy var toolbar = DetailToolbar()
+
   // MARK: - Init
 
   required init(comic: Comic) {
@@ -39,7 +41,7 @@ final class DetailController: UIViewController {
   }
 
   private func setup() {
-    view.addSubview(scrollView)
+    view.addSubviews([scrollView, toolbar])
     scrollView.addSubview(imageView)
 
     scrollView.delegate = self
@@ -47,7 +49,13 @@ final class DetailController: UIViewController {
 
     activate(
       scrollView.anchor.edges,
+      toolbar.anchor.left.right,
+      toolbar.anchor.height.equal.to(50),
       imageView.anchor.edges
+    )
+
+    activate(
+      toolbar.anchor.bottom.equal.to(view.safeAreaLayoutGuide.anchor.bottom)
     )
   }
 
