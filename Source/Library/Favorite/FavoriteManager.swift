@@ -14,16 +14,21 @@ final class FavoriteManager {
 
   // MARK: = Persistence
 
+  /// Load all favorite from disk
   func load() {
 
   }
 
+  /// Save all favorite to disk
   func save() {
 
   }
 
   // MARK: - Star
 
+  /// Toggle favorite status
+  ///
+  /// - Parameter comic: The comic to toggle
   func toggle(comic: Comic) {
     if isStarred(comic: comic) {
       unstar(comic: comic)
