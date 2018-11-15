@@ -32,7 +32,7 @@ final class ComicsController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.backgroundColor = .white
+    view.backgroundColor = UIColor(patternImage: R.image.background()!)
 
     setupCollectionView()
     setupAdapter()
@@ -49,8 +49,7 @@ final class ComicsController: UIViewController {
     collectionView.dataSource = adapter
     collectionView.delegate = adapter
     collectionView.isPagingEnabled = true
-
-    collectionView.backgroundColor = .white
+    collectionView.backgroundColor = .clear
     view.addSubview(collectionView)
 
     activate(

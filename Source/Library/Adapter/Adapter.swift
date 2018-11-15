@@ -32,7 +32,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     return cell
   }
 
-  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+  func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     let item = items[indexPath.item]
     display?(item, indexPath)
   }
