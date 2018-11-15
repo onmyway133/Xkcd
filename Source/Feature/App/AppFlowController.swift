@@ -12,15 +12,15 @@ import UIKit
 
 /// Manage app flow
 final class AppFlowController: UIViewController {
+
+  let comicService = ComicService(networking: NetworkService(configuration: .default))
+  let favoriteManager = FavoriteManager()
+
   /// Start the flow
   func start() {
-    let comicService = ComicService(networking: NetworkService(configuration: .default))
-    let comicsController = ComicsController(comicService: comicService)
-    let favoriteController = FavoriteController()
-
     let controller = MainController(
-      comicsController: comicsController,
-      favoriteController: favoriteController
+      comicService: comicService,
+      favoriteManager: favoriteManager
     )
 
     add(childViewController: controller)

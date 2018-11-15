@@ -11,17 +11,19 @@ import SafariServices
 
 final class MainController: UITabBarController {
 
-  private let comicsController: ComicsController
-  private let favoriteController: FavoriteController
+  private var comicsController: ComicsController!
+  private var favoriteController: FavoriteController!
   private var comicNavigationController: UINavigationController!
   private var favoriteNavigationController: UINavigationController!
-  private let favoriteManager = FavoriteManager()
+
+  private let comicService: ComicService
+  private let favoriteManager: FavoriteManager
 
   // MARK: - Init
 
-  required init(comicsController: ComicsController, favoriteController: FavoriteController) {
-    self.comicsController = comicsController
-    self.favoriteController = favoriteController
+  required init(comicService: ComicService, favoriteManager: FavoriteManager) {
+    self.comicService = comicService
+    self.favoriteManager = favoriteManager
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -33,6 +35,9 @@ final class MainController: UITabBarController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    comicsController = ComicsController(comicService: comicService)
+    let favoriteController = FavoriteController()
 
     comicsController.title = R.string.localizable.comicsTitle()
     comicsController.tabBarItem.image = R.image.comics()
