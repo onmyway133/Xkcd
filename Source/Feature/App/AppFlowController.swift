@@ -18,7 +18,11 @@ final class AppFlowController: UIViewController {
     let comicsController = ComicsController(comicService: comicService)
     let favoriteController = FavoriteController()
 
-    let controller = MainController(comicsController: comicsController, favoriteController: favoriteController)
+    let controller = MainController(
+      comicsController: comicsController,
+      favoriteController: favoriteController
+    )
+
     add(childViewController: controller)
   }
 }

@@ -12,6 +12,8 @@ final class MainController: UITabBarController {
 
   private let comicsController: ComicsController
   private let favoriteController: FavoriteController
+  private var comicNavigationController: UINavigationController!
+  private var favoriteNavigationController: UINavigationController!
 
   // MARK: - Init
 
@@ -36,9 +38,21 @@ final class MainController: UITabBarController {
     favoriteController.title = R.string.localizable.favoriteTitle()
     favoriteController.tabBarItem.image = R.image.favorites()
 
+    comicNavigationController = UINavigationController(rootViewController: comicsController)
+    favoriteNavigationController = UINavigationController(rootViewController: favoriteController)
+
     viewControllers = [
-      UINavigationController(rootViewController: comicsController),
-      UINavigationController(rootViewController: favoriteController)
+      comicNavigationController,
+      favoriteNavigationController
     ]
+
+    handleFlow()
+  }
+
+  func handleFlow() {
+    comicsController.selectComic = { [weak self] comic in
+      let detailController = DetailController(comic: comic)
+      self?.comicNavigationController.pushViewController(detailController, animated: true)
+    }
   }
 }

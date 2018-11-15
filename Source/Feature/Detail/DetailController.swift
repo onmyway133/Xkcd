@@ -19,6 +19,7 @@ final class DetailController: UIViewController {
   required init(comic: Comic) {
     self.comic = comic
     super.init(nibName: nil, bundle: nil)
+    title = comic.title
   }
 
   required init?(coder aDecoder: NSCoder) {
