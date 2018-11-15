@@ -15,6 +15,7 @@ final class MainController: UITabBarController {
   private let favoriteController: FavoriteController
   private var comicNavigationController: UINavigationController!
   private var favoriteNavigationController: UINavigationController!
+  private let favoriteManager = FavoriteManager()
 
   // MARK: - Init
 
@@ -62,7 +63,7 @@ final class MainController: UITabBarController {
   }
 
   private func makeDetail(comic: Comic) -> DetailController {
-    let detailController = DetailController(comic: comic)
+    let detailController = DetailController(comic: comic, favoriteManager: favoriteManager)
     detailController.explainComic = { [weak self] comic in
       self?.showExplain(comic: comic)
     }

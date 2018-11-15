@@ -12,6 +12,8 @@ import On
 
 final class DetailController: UIViewController {
   private let comic: Comic
+  private let favoriteManager: FavoriteManager
+
   private lazy var scrollView = UIScrollView()
   private lazy var imageView = UIImageView().then {
     $0.contentMode = .scaleAspectFill
@@ -22,8 +24,9 @@ final class DetailController: UIViewController {
 
   // MARK: - Init
 
-  required init(comic: Comic) {
+  required init(comic: Comic, favoriteManager: FavoriteManager) {
     self.comic = comic
+    self.favoriteManager = favoriteManager
     super.init(nibName: nil, bundle: nil)
     title = "#\(comic.id) \(comic.title)"
   }
