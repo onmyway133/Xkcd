@@ -32,11 +32,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     return cell
   }
 
-  func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    let item = items[indexPath.item]
-    display?(item, indexPath)
-  }
-
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let item = items[indexPath.item]
     select?(item)
@@ -50,5 +45,18 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
       width: collectionView.frame.size.width,
       height: collectionView.frame.size.height * 0.8
     )
+  }
+
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    guard let collectionView = scrollView as? UICollectionView else {
+      fatalError()
+    }
+
+    guard let visibleIndexPath = collectionView.visibleIndexPath() else {
+      return
+    }
+
+    let item = items[visibleIndexPath.item]
+    display?(item, visibleIndexPath)
   }
 }

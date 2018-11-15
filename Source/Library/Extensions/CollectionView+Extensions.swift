@@ -25,4 +25,10 @@ extension UICollectionView {
     let indexPath = IndexPath(item: count-1, section: 0)
     scrollToItem(at: indexPath, at: .right, animated: true)
   }
+
+  func visibleIndexPath() -> IndexPath? {
+    let visibleRect = CGRect(origin: contentOffset, size: bounds.size)
+    let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+    return indexPathForItem(at: visiblePoint)
+  }
 }

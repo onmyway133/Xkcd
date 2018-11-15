@@ -14,7 +14,7 @@ final class ComicsController: UIViewController {
   private let comicService: ComicService
   private var collectionView: UICollectionView!
   private let adapter = Adapter<Either<Int, Comic>, ComicCell>()
-  private let debouner = Debouncer(delay: 1)
+  private let debouner = Debouncer(delay: 0.5)
 
   // MARK: - Init
 
@@ -108,7 +108,7 @@ final class ComicsController: UIViewController {
 
   /// Populate data source starting from current comic backward
   private func populate(currentComic: Comic) {
-    var items: [Either<Int, Comic>] = Array(1..<currentComic.id).map({
+    var items: [Either<Int, Comic>] = Array(0..<currentComic.id).map({
       return Either.left($0)
     })
 
