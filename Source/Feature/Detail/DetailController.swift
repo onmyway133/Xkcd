@@ -44,6 +44,7 @@ final class DetailController: UIViewController {
     setup()
     handleActions()
     loadData()
+    updateUI()
   }
 
   private func setup() {
@@ -73,10 +74,24 @@ final class DetailController: UIViewController {
 
       self.explainComic?(self.comic)
     }
+
+    toolbar.favoriteButton.on.tap { [weak self] in
+      guard let self = self else {
+        return
+      }
+
+      self.favoriteManager.toggle(comic: self.comic)
+      self.updateUI()
+    }
   }
 
   private func loadData() {
     imageView.setImage(url: comic.image)
+  }
+
+  private func updateUI() {
+    let image = favoriteManager.isStarred(comic: comic) ? R.image.starred() : R.image.unstar()
+    toolbar.favoriteButton.setImage(image, for: .normal)
   }
 }
 
