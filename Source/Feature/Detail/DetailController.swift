@@ -7,8 +7,23 @@
 //
 
 import UIKit
+import Anchors
 
 final class DetailController: UIViewController {
+
+  private let stackView = UIStackView()
+  private let comic: Comic
+
+  // MARK: - Init
+
+  required init(comic: Comic) {
+    self.comic = comic
+    super.init(nibName: nil, bundle: nil)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError()
+  }
 
   // MARK: - Life cycle
 
