@@ -41,7 +41,7 @@ final class ComicsController: UIViewController {
   // MARK: - Setup
 
   private func setupCollectionView() {
-    let layout = UICollectionViewFlowLayout()
+    let layout = CoverflowLayout()
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.register(cellType: ComicCell.self)
     collectionView.dataSource = adapter
