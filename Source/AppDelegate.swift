@@ -12,16 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  private let flowController = AppFlowController()
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-    let flowController = AppFlowController()
-
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = flowController
     window?.makeKeyAndVisible()
     flowController.start()
 
     return true
+  }
+
+  func applicationDidBecomeActive(_ application: UIApplication) {
+    flowController.favoriteManager.load()
+  }
+
+  func applicationDidEnterBackground(_ application: UIApplication) {
+    flowController.favoriteManager.save()
   }
 }
