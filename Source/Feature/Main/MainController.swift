@@ -37,7 +37,7 @@ final class MainController: UITabBarController {
     super.viewDidLoad()
 
     comicsController = ComicsController(comicService: comicService)
-    let favoriteController = FavoriteController()
+    favoriteController = FavoriteController(favoriteManager: favoriteManager)
 
     comicsController.title = R.string.localizable.comicsTitle()
     comicsController.tabBarItem.image = R.image.comics()
