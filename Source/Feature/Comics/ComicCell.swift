@@ -13,6 +13,7 @@ final class ComicCell: UICollectionViewCell {
   private lazy var backgroundImageView = UIImageView().then {
     $0.contentMode = .scaleAspectFill
     $0.clipsToBounds = true
+    $0.layer.cornerRadius = 10
   }
 
   private lazy var overlayView = UIView().then {
@@ -34,13 +35,7 @@ final class ComicCell: UICollectionViewCell {
 
     addSubviews([backgroundImageView, overlayView])
     overlayView.addSubviews([idLabel, titleLabel])
-
-    layer.cornerRadius = 5
-    layer.masksToBounds = true
-    layer.shadowOffset = CGSize(width: 1, height: 1)
-    layer.shadowOpacity = 0.5
-    layer.shadowColor = UIColor.black.cgColor
-
+    addShadow()
     setupConstraints()
   }
 
