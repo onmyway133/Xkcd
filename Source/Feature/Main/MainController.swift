@@ -57,7 +57,7 @@ final class MainController: UITabBarController {
   }
 
   private func handleFlow() {
-    comicsController.selectComic = { [weak self] comic in
+    let selectComic = { [weak self] (comic: Comic) -> Void in
       guard let self = self else {
         return
       }
@@ -65,6 +65,9 @@ final class MainController: UITabBarController {
       let detailController = self.makeDetail(comic: comic)
       self.comicNavigationController.pushViewController(detailController, animated: true)
     }
+
+    comicsController.selectComic = selectComic
+    favoriteController.selectComic = selectComic
   }
 
   private func makeDetail(comic: Comic) -> DetailController {
