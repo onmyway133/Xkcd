@@ -56,6 +56,7 @@ final class FavoriteController: UIViewController {
     collectionView.delegate = adapter
     collectionView.isPagingEnabled = true
     collectionView.backgroundColor = .clear
+    collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 20)
     view.addSubview(collectionView)
 
     activate(
