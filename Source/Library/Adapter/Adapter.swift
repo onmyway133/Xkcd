@@ -14,6 +14,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   var items: [T] = []
   var configure: ((T, Cell) -> Void)?
   var select: ((T) -> Void)?
+  var display: ((T, IndexPath) -> Void)?
 
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
@@ -29,6 +30,11 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     let cell: Cell = collectionView.dequeue(indexPath: indexPath)
     configure?(item, cell)
     return cell
+  }
+
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    let item = items[indexPath.item]
+    display?(item, indexPath)
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

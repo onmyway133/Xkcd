@@ -14,6 +14,7 @@ final class ComicsController: UIViewController {
   private let comicService: ComicService
   private var collectionView: UICollectionView!
   private let adapter = Adapter<Either<Int, Comic>, ComicCell>()
+  private let debouner = Debouncer(delay: 1)
 
   // MARK: - Init
 
@@ -66,6 +67,17 @@ final class ComicsController: UIViewController {
         cell.configure(comic: comic)
       }
     }
+
+    adapter.display = { [weak self] model, indexPath in
+      switch model {
+      case .left(let id):
+        self?.debouner.schedule {
+          self?.loadComic(id: id, indexPath: indexPath)
+        }
+      default:
+        break
+      }
+    }
   }
 
   // MARK: - Data
@@ -78,6 +90,19 @@ final class ComicsController: UIViewController {
 
       DispatchQueue.main.async {
         self?.populate(currentComic: comic)
+      }
+    })
+  }
+
+  private func loadComic(id: Int, indexPath: IndexPath) {
+    comicService.fetchComic(id: id, completion: { comic in
+      guard let comic = comic else {
+        return
+      }
+
+      DispatchQueue.main.async {
+        self.adapter.items[indexPath.row] = Either.right(comic)
+        self.collectionView.reloadItems(at: [indexPath])
       }
     })
   }
