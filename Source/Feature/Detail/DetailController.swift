@@ -17,6 +17,7 @@ final class DetailController: UIViewController {
   }
 
   private lazy var toolbar = DetailToolbar()
+  explainComic: ((Comic) -> Void)?
 
   // MARK: - Init
 
@@ -37,6 +38,7 @@ final class DetailController: UIViewController {
 
     view.backgroundColor = .white
     setup()
+    handleActions()
     loadData()
   }
 
@@ -57,6 +59,10 @@ final class DetailController: UIViewController {
     activate(
       toolbar.anchor.bottom.equal.to(view.safeAreaLayoutGuide.anchor.bottom)
     )
+  }
+
+  private func handleActions() {
+    
   }
 
   private func loadData() {
