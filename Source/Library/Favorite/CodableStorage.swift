@@ -22,7 +22,7 @@ final class CodableStorage {
       fatalError()
     }
 
-    self.fileUrl = url
+    self.fileUrl = url.appendingPathComponent(fileName)
   }
 
   func save<T: Codable>(objects: T) throws {
