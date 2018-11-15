@@ -11,17 +11,23 @@ import Foundation
 /// Keep favorite information
 final class FavoriteManager {
   private(set) var comics = [Comic]()
+  private let queue = DispatchQueue(label: "FavoriteManager")
+  private let codableStorage = CodableStorage(fileName: "favorites")
 
   // MARK: = Persistence
 
   /// Load all favorite from disk
   func load() {
-
+    queue.async {
+      self.comics = (try? self.codableStorage.load()) ?? []
+    }
   }
 
   /// Save all favorite to disk
   func save() {
-
+    queue.async {
+      try? self.codableStorage.save(objects: self.comics)
+    }
   }
 
   // MARK: - Star
