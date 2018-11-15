@@ -10,16 +10,16 @@ import UIKit
 import Anchors
 
 final class DetailController: UIViewController {
-
-  private let stackView = UIStackView()
   private let comic: Comic
+  private lazy var scrollView = UIScrollView()
+  private lazy var imageView = UIImageView()
 
   // MARK: - Init
 
   required init(comic: Comic) {
     self.comic = comic
     super.init(nibName: nil, bundle: nil)
-    title = comic.title
+    title = "#\(comic.id) \(comic.title)"
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -32,5 +32,16 @@ final class DetailController: UIViewController {
     super.viewDidLoad()
 
     view.backgroundColor = .white
+    setup()
+  }
+
+  private func setup() {
+    view.addSubview(scrollView)
+    scrollView.addSubview(imageView)
+
+    activate(
+      scrollView.anchor.edges,
+      imageView.anchor.edges
+    )
   }
 }
