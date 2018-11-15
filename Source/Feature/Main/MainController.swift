@@ -64,23 +64,18 @@ final class MainController: UITabBarController {
   private func makeDetail(comic: Comic) -> DetailController {
     let detailController = DetailController(comic: comic)
     detailController.explainComic = { [weak self] comic in
-      guard let self = self else {
-        return
-      }
-
-      let webController = self.makeExplain(comic: comic)
-      detailController.navigationController?.pushViewController(webController, animated: true)
+      self?.showExplain(comic: comic)
     }
 
     return detailController
   }
 
-  private func makeExplain(comic: Comic) -> SFSafariViewController {
+  private func showExplain(comic: Comic) {
     guard let url = URL(string: "https://www.explainxkcd.com/wiki/index.php/\(comic.id)") else {
       fatalError()
     }
 
     let controller = SFSafariViewController(url: url)
-    return controller
+    present(controller, animated: true, completion: nil)
   }
 }
