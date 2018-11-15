@@ -101,7 +101,9 @@ final class ComicsController: UIViewController {
 
       DispatchQueue.main.async {
         self.adapter.items[indexPath.row] = Either.right(comic)
-        self.collectionView.reloadItems(at: [indexPath])
+//        self.collectionView.reloadItems(at: [indexPath])
+        // reloadItems may trigger layout to reinvalidate
+        self.collectionView.reloadData()
       }
     })
   }
