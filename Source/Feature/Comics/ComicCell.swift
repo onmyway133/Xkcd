@@ -43,6 +43,23 @@ final class ComicCell: UICollectionViewCell {
     fatalError()
   }
 
+  override var isHighlighted: Bool {
+    didSet {
+      UIView.animate(
+        withDuration: 0.25,
+        delay: 0,
+        usingSpringWithDamping: 0.5,
+        initialSpringVelocity: 0.5,
+        options: .curveEaseInOut,
+        animations: {
+          let transform = self.isHighlighted ? CGAffineTransform(scaleX: 0.9, y: 0.9) : .identity
+          self.backgroundImageView.transform = transform
+        },
+        completion: nil
+      )
+    }
+  }
+
   // MARK: - Setup
 
   private func setupConstraints() {
