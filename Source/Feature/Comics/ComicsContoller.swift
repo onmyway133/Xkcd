@@ -16,6 +16,9 @@ final class ComicsController: UIViewController {
   private let adapter = Adapter<Either<Int, Comic>, ComicCell>()
   private let debouner = Debouncer(delay: 0.5)
 
+  /// Called when a comic is selected
+  var selectComic: ((Comic) -> Void)?
+
   // MARK: - Init
 
   required init(comicService: ComicService) {
@@ -73,6 +76,15 @@ final class ComicsController: UIViewController {
         self?.debouner.schedule {
           self?.loadComic(id: id, indexPath: indexPath)
         }
+      default:
+        break
+      }
+    }
+
+    adapter.select = { [weak self] model in
+      switch model {
+      case .right(let comic):
+        self?.selectComic?(comic)
       default:
         break
       }
