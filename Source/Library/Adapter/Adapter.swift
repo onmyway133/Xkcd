@@ -14,7 +14,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   var items: [T] = []
   var configure: ((T, Cell) -> Void)?
   var select: ((T) -> Void)?
-  var cellHeight: CGFloat = 60
 
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
@@ -41,6 +40,9 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     _ collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: collectionView.frame.size.width, height: cellHeight)
+    return CGSize(
+      width: collectionView.frame.size.width,
+      height: collectionView.frame.size.height * 0.8
+    )
   }
 }

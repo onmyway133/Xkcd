@@ -42,10 +42,12 @@ final class ComicsController: UIViewController {
 
   private func setupCollectionView() {
     let layout = CoverflowLayout()
+
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.register(cellType: ComicCell.self)
     collectionView.dataSource = adapter
     collectionView.delegate = adapter
+    collectionView.isPagingEnabled = true
 
     collectionView.backgroundColor = .white
     view.addSubview(collectionView)
@@ -56,8 +58,6 @@ final class ComicsController: UIViewController {
   }
 
   private func setupAdapter() {
-    adapter.cellHeight = 300
-
     adapter.configure = { model, cell in
       switch model {
       case .left(let id):
