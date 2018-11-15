@@ -8,6 +8,7 @@
 
 import UIKit
 import Anchors
+import On
 
 final class DetailController: UIViewController {
   private let comic: Comic
@@ -17,7 +18,7 @@ final class DetailController: UIViewController {
   }
 
   private lazy var toolbar = DetailToolbar()
-  explainComic: ((Comic) -> Void)?
+  var explainComic: ((Comic) -> Void)?
 
   // MARK: - Init
 
@@ -62,7 +63,13 @@ final class DetailController: UIViewController {
   }
 
   private func handleActions() {
-    
+    toolbar.explainButton.on.tap { [weak self] in
+      guard let self = self else {
+        return
+      }
+
+      self.explainComic?(self.comic)
+    }
   }
 
   private func loadData() {
