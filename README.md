@@ -4,7 +4,7 @@ Xkcd app
 ## Description
 
 <div align="center">
-<img src="Screenshots/cover.png" height="500" />
+<img src="Screenshots/cover.png" height="400" />
 </div>
 
 ## Credit
