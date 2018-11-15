@@ -35,11 +35,6 @@ final class ComicCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    UIFont.familyNames.forEach({ familyName in
-      let fontNames = UIFont.fontNames(forFamilyName: familyName)
-      print(familyName, fontNames)
-    })
-
     addSubviews([backgroundImageView, overlayView])
     overlayView.addSubviews([idLabel, titleLabel])
     addShadow()
