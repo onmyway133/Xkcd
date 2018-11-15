@@ -12,7 +12,9 @@ import Anchors
 final class DetailController: UIViewController {
   private let comic: Comic
   private lazy var scrollView = UIScrollView()
-  private lazy var imageView = UIImageView()
+  private lazy var imageView = UIImageView().then {
+    $0.contentMode = .scaleAspectFill
+  }
 
   // MARK: - Init
 
@@ -33,15 +35,29 @@ final class DetailController: UIViewController {
 
     view.backgroundColor = .white
     setup()
+    loadData()
   }
 
   private func setup() {
     view.addSubview(scrollView)
     scrollView.addSubview(imageView)
 
+    scrollView.delegate = self
+    scrollView.maximumZoomScale = 10
+
     activate(
       scrollView.anchor.edges,
       imageView.anchor.edges
     )
+  }
+
+  private func loadData() {
+    imageView.setImage(url: comic.image)
+  }
+}
+
+extension DetailController: UIScrollViewDelegate {
+  func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+    return imageView
   }
 }
