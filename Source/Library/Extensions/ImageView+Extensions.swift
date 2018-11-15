@@ -19,7 +19,7 @@ extension UIImageView {
 
     self.image = placeholder
     self.imageService?.fetch(url: url, completion: { [weak self] image in
-      self?.image = image
+      self?.animate(newImage: image)
     })
   }
 
@@ -36,6 +36,18 @@ extension UIImageView {
         objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC
       )
     }
+  }
+
+  func animate(newImage: UIImage?) {
+    UIView.transition(
+      with: self,
+      duration: 0.2,
+      options: .transitionCrossDissolve,
+      animations: {
+        self.image = newImage
+      },
+      completion: nil
+    )
   }
 }
 
